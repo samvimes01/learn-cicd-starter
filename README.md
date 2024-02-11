@@ -23,3 +23,10 @@ go build -o notely && ./notely
 *This starts the server in non-database mode.* It will serve a simple webpage at `http://localhost:8000`.
 
 You do *not* need to set up a database or any interactivity on the webpage yet. Instructions for that will come later in the course!
+
+## Gloud deployment
+
+```sh
+# gcloud builds submit --tag REGION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG .
+gcloud builds submit --tag us-central1-docker.pkg.dev/notely-414013/notely-ar-repo/im:tag .
+```
