@@ -9,6 +9,7 @@ import (
 	"net/url"
 	"os"
 	"strings"
+	// "text/template/parse"
 	"time"
 
 	"github.com/go-chi/chi"
@@ -45,10 +46,11 @@ func main() {
 		log.Println("DATABASE_URL environment variable is not set")
 		log.Println("Running without CRUD endpoints")
 	} else {
-		parsedURL, err := addParseTimeParam(dbURL)
-		if err != nil {
-			log.Fatal(err)
-		}
+		// parsedURL, err := addParseTimeParam(dbURL)
+		// if err != nil {
+		// 	log.Fatal(err)
+		// }
+		parsedURL := dbURL + "?parseTime=true"
 		db, err := sql.Open("mysql", parsedURL)
 		if err != nil {
 			log.Fatal(err)
